@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import React from 'react'
 import { MenuWrapper } from './styles/MenuWrapper'
 import Logo from '../../../theme/Logo/Logo'
+import {Button} from '../Button'
 
 const links = [
  { 
@@ -21,16 +22,13 @@ const links = [
 export default function Menu(){
   return(
     <MenuWrapper>
-      <style>
-      @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-    </style>
       <MenuWrapper.LeftSide>
         <Logo/>
       </MenuWrapper.LeftSide>
       <MenuWrapper.CentralSide>
         {links.map((links) => {
            return(
-            <li>
+            <li key={links.url}>
               <a href ={links.url}>
                 {links.texto} 
               </a>
@@ -40,8 +38,12 @@ export default function Menu(){
         })}
       </MenuWrapper.CentralSide>
       <MenuWrapper.RightSide>
-       <button>Entrar</button>
-       <button>Cadastrar</button>
+       <Button ghost variant = "secondary.main" >
+         Entrar
+       </Button>
+       <Button variant ="primary.main" >
+         Cadastrar
+       </Button>
       </MenuWrapper.RightSide>
     </MenuWrapper>
   )

@@ -1,5 +1,6 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import Head from 'next/head';
+import theme from '../src/theme'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -8,12 +9,6 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 `
-
-const theme = {
-  colors: {
-    primary: '#0070f3',
-  },
-}
 
 export default function App({ Component, pageProps }) {
   return (
