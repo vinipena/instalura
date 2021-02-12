@@ -13,7 +13,7 @@ export const colors = {
       },
     },
     primary: {
-      main: {
+      main:  {
         color: '#D7385E',
         contrastText: '#fff',
       },
@@ -41,6 +41,6 @@ export const colors = {
   
   export default {
     colors,
-    borderRadius: '8px',
+    borderRadius: '9px',
     transition: '200ms ease-in-out',
   }; 

@@ -20,7 +20,7 @@ export const Button = styled.button`
     transition: opacity ${({ theme }) => theme.transition};
     border-radius: ${({ theme }) => theme.borderRadius};
      ${({ ghost }) => (ghost ? ButtonGhost : ButtonDefault)}
-    &:hover,
+    &:hover ,
     &:focus{
         opacity:.5;
     }

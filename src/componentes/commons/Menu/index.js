@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import React from 'react'
-import { MenuWrapper } from './styles/MenuWrapper'
+import { MenuWrapper  } from './styles/MenuWrapper'
 import Logo from '../../../theme/Logo/Logo'
 import {Button} from '../Button'
 
