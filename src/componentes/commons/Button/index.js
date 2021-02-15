@@ -1,6 +1,6 @@
 import styled, { css }from 'styled-components'
 import get from 'lodash/get'
-
+import {TextStyleVariantMap} from '../../foundation/Text'
 const ButtonGhost = css`
     background: transparent;
     color: ${(props) => get(props.theme,`colors.${props.variant}.color`)};
@@ -19,7 +19,8 @@ export const Button = styled.button`
     opacity: 1;
     transition: opacity ${({ theme }) => theme.transition};
     border-radius: ${({ theme }) => theme.borderRadius};
-     ${({ ghost }) => (ghost ? ButtonGhost : ButtonDefault)}
+    ${TextStyleVariantMap.smallestException}
+    ${({ ghost }) => (ghost ? ButtonGhost : ButtonDefault)}
     &:hover ,
     &:focus{
         opacity:.5;
