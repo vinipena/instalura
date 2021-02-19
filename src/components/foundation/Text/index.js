@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import get from 'lodash/get';
 import PropTypes from 'prop-types';
-import { propToStyle } from'../../../theme/utils/propToStyle';
+import { propToStyle } from '../../../theme/utils/propToStyle';
 import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
 
 const paragraph1 = css`
@@ -21,7 +21,7 @@ const smallestException = css`
   `}
 `;
 
-export const TextStyleVariantMap = {
+export const TextStyleVariants = {
   smallestException,
   paragraph1,
   title: css`
@@ -43,12 +43,12 @@ export const TextStyleVariantMap = {
 };
 
 const TextBase = styled.span`
-  ${({ variant }) => TextStyleVariantMap[variant]}
+  ${({ variant }) => TextStyleVariants[variant]}
   color: ${({ theme, color }) => get(theme, `colors.${color}.color`)};
-  ${propToStyle('textAling')}
+  ${propToStyle('textAlign')}
 `;
 
-export default function Text({
+export function Text({
   variant,
   children,
   tag,
