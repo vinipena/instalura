@@ -14,6 +14,7 @@ const ButtonDefault = css`
   background-color: ${({ theme, variant }) => get(theme, `colors.${variant}.color`)};
 `;
 
+// eslint-disable-next-line import/prefer-default-export
 export const Button = styled.button`
   border: 0;
   cursor: pointer;
@@ -35,6 +36,7 @@ export const Button = styled.button`
 
   ${propToStyle('margin')}
   ${propToStyle('display')}
+  ${propToStyle('width')}
 
   ${({ ghost }) => (ghost ? ButtonGhost : ButtonDefault)}
   &:hover,

@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import { breakpointsMedia } from '../../../../theme/utils/breakpointsMedia';
 import { TextStyleVariants } from '../../../foundation/Text';
 
+// eslint-disable-next-line import/prefer-default-export
 export const MenuWrapper = styled.nav`
   font-family: 'Rubik', sans-serif;
   display: flex;
@@ -78,7 +79,7 @@ MenuWrapper.CentralSide = styled.div`
     text-align: center;
     display: block;
     text-decoration: none;
-    color: #88989E;
+    color: ${({ theme }) => theme.colors.tertiary.light.color};
     transition: 200ms ease-in-out;
     ${breakpointsMedia({
     xs: css`
