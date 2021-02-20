@@ -1,8 +1,9 @@
+/* eslint-disable import/prefer-default-export */
 import styled, { css } from 'styled-components';
+
 import { breakpointsMedia } from '../../../../theme/utils/breakpointsMedia';
 import { TextStyleVariants } from '../../../foundation/Text';
 
-// eslint-disable-next-line import/prefer-default-export
 export const MenuWrapper = styled.nav`
   font-family: 'Rubik', sans-serif;
   display: flex;
@@ -23,7 +24,7 @@ export const MenuWrapper = styled.nav`
       max-width: 768px;
     `,
     lg: css`
-      max-width: 1160px; 
+      max-width: 1160px;
     `,
     xl: css`
       max-width: 1222px;
@@ -37,12 +38,8 @@ MenuWrapper.LeftSide = styled.div`
   order: 1;
   ${breakpointsMedia({
     md: css`
-        width: 131px;
-        height: 32px;
-      `,
-  })}
-  ${breakpointsMedia({
-    md: css`
+      width: 131px;
+      height: 32px;
       order: initial;
       padding-right: 16px;
     `,
@@ -50,7 +47,7 @@ MenuWrapper.LeftSide = styled.div`
 `;
 
 MenuWrapper.CentralSide = styled.div`
-  padding: 0;
+  padding: 12px;
   margin: 0;
   order: 3;
   width: 100%;
@@ -59,10 +56,8 @@ MenuWrapper.CentralSide = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-top: 17px;
-  border-top: 1px solid #88989E;
-  border-bottom: 1px solid #88989E;
-  padding: 12px;
-  
+  border-top: 1px solid #88989e;
+  border-bottom: 1px solid #88989e;
   ${breakpointsMedia({
     md: css`
       max-width: 332px;
@@ -82,18 +77,17 @@ MenuWrapper.CentralSide = styled.div`
     color: ${({ theme }) => theme.colors.tertiary.light.color};
     transition: 200ms ease-in-out;
     ${breakpointsMedia({
-    xs: css`
+      xs: css`
         ${TextStyleVariants.smallestException}
-    `,
-    md: css`
-      ${TextStyleVariants.paragraph1}
-    `,
-  })}
+      `,
+      md: css`
+        ${TextStyleVariants.paragraph1}
+      `,
+    })}
     &:hover,
-    &:focus {
+        &:focus {
       font-weight: 500;
-      color: #070C0E;
-      
+      color: ${({ theme }) => theme.colors.tertiary.main.color};
     }
   }
 `;

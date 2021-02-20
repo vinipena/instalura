@@ -1,14 +1,15 @@
+/* eslint-disable import/prefer-default-export */
 import { css } from 'styled-components';
-import breakpoints from '../index';
+import theme from '../index';
 
-// eslint-disable-next-line import/prefer-default-export
-export function breakpointsMedia(cssByBreakpoint) {
-  const breakpointNames = Object.keys(breakpoints);
-  return breakpointNames
-    .filter((breakpointName) => Boolean(cssByBreakpoint[breakpointName]))
-    .map((breakpointName) => css`
-    @media only screen and (min-width: ${breakpoints[breakpointName]}px) {
-      ${cssByBreakpoint[breakpointName]}
-    }
-  `);
+const { breakpoints } = theme;
+
+export function breakpointsMedia(cssByBreakpoints) {
+  const breakpointsNames = Object.keys(cssByBreakpoints);
+
+  return breakpointsNames.map((breakpointsName) => css`
+      @media screen and (min-width: ${breakpoints[breakpointsName]}px) {
+        ${cssByBreakpoints[breakpointsName]}
+      }
+    `);
 }
