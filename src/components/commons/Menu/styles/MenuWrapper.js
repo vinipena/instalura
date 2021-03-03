@@ -69,7 +69,7 @@ MenuWrapper.CentralSide = styled.div`
       padding-top: 0;
       padding-bottom: 0;
     `,
-  })}
+  })};
   a {
     text-align: center;
     display: block;

@@ -1,13 +1,18 @@
 import React from 'react';
 
+// import styled, { css } from 'styled-components';
 import Menu from '../src/components/commons/Menu';
 import Footer from '../src/components/commons/Footer';
-import {Text} from '../src/components/foundation/Text';
+import Modal from '../src/components/commons/Modal';
+import { Text } from '../src/components/foundation/Text';
 import { Button } from '../src/components/commons/Button';
 import { Grid } from '../src/components/layout/Grid';
 import { Box } from '../src/components/layout/Box';
 
 export default function Home() {
+  const [isModalOpen, setModalState] = React.useState(false);
+  console.log('Retorno hook', isModalOpen);
+
   return (
     <Box
       flex="1"
@@ -18,6 +23,20 @@ export default function Home() {
       backgroundRepeat="no-repeat"
       backgroundPosition="bottom right"
     >
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setModalState(false)}
+      >
+        {(propsDoModal) => (
+          <Box
+            backgroundColor="white"
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...propsDoModal}
+          >
+            <div>Conteudo do Modal</div>
+          </Box>
+        ) }
+      </Modal>
       <Menu />
       <Grid.Container
         marginTop={{
@@ -56,7 +75,7 @@ export default function Home() {
               }}
             >
               Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
+              industry. Lorem Ipsum has been the industry standard dummy text
               ever since the 1500s
             </Text>
 
@@ -67,6 +86,10 @@ export default function Home() {
                 md: 'initial',
               }}
               display="block"
+              onClick={() => {
+                // isModalOpen = true;
+                setModalState(!isModalOpen);
+              }}
             >
               Cadastrar
             </Button>
@@ -75,6 +98,7 @@ export default function Home() {
             <img
               style={{ display: 'block', margin: 'auto' }}
               src="/images/phones.png"
+              alt="Nicolas Cage face on CellPhones "
             />
           </Grid.Col>
         </Grid.Row>

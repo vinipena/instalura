@@ -9,6 +9,7 @@ export const Box = styled.div`
   ${propToStyle('flexDirection')}
   ${propToStyle('justifyContent')}
   ${propToStyle('flexWrap')}
+  ${propToStyle('backgroundColor')}
   background-image: ${({ theme }) => theme.imageBubbles};
   ${propToStyle('backgroundRepeat')}
   ${propToStyle('backgroundPosition')}
