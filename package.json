@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+     "lint": "eslint --ignore-path .gitignore ." 
   },
   "dependencies": {
     "framer-motion": "^3.9.1",
