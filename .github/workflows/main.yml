@@ -21,7 +21,7 @@ jobs:
         # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
         - uses: actions/checkout@v2
         # INFORMA A VERSÃO CORRETA DO NODE PARA RODAR O PROJETO
-        - uses: actioln/setup-node@v1
+        - uses: actions/setup-node@v1
           with:
             node-version: '14.15.0'
         ##############################################################
