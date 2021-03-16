@@ -30,5 +30,7 @@ jobs:
         # Runs a single command using the runners shell
         - name: Node version
           run: node -v
+        - name: Installa dependencias
+          run: npm install
         - name: Roda o Linter
           run: npm run lint
