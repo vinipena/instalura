@@ -21,13 +21,11 @@ export const ToggleWrapper = styled.button`
     transition: all 0.3s linear;
     // sun icon
     &:first-child {
-      transform: ${({ lightTheme }) =>
-        lightTheme ? 'translateY(-5px)' : 'translateY(60px)'};
+      transform: ${({ lightTheme }) => (lightTheme ? 'translateY(-5px)' : 'translateY(60px)')};
     }
     // moon icon
     &:nth-child(2) {
-      transform: ${({ lightTheme }) =>
-        lightTheme ? 'translateY(60px)' : 'translateY(-5px)'};
+      transform: ${({ lightTheme }) => (lightTheme ? 'translateY(60px)' : 'translateY(-5px)')};
     }
   }
 `;

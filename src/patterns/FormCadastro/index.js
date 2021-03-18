@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable linebreak-style */
 import React from 'react';
 import { Button } from '../../components/commons/Button';
@@ -5,7 +6,6 @@ import TextField from '../../components/forms/TextField';
 import { Box } from '../../components/layout/Box';
 import { Grid } from '../../components/layout/Grid';
 import { Text } from '../../components/foundation/Text';
-
 
 function FormContent() {
   const [userInfo, setUserInfo] = React.useState({
@@ -65,7 +65,7 @@ function FormContent() {
         />
       </div>
       <Button
-        variant='primary.main'
+        variant="primary.main"
         type="submit"
         disabled={isFormInvalid}
         fullWidth

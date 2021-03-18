@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from 'react';
 
 // import styled, { css } from 'styled-components';
@@ -19,7 +20,7 @@ export default function Home() {
       flex="1"
       display="flex"
       flexWrap="wrap"
-      flexDirection="column"
+      flexDirection="colgit "
       justifyContent="space-between"
       backgroundRepeat="no-repeat"
       backgroundPosition="bottom right"

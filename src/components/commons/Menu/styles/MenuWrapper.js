@@ -77,13 +77,13 @@ MenuWrapper.CentralSide = styled.div`
     color: ${({ theme }) => theme.colors.tertiary.light.color};
     transition: 200ms ease-in-out;
     ${breakpointsMedia({
-      xs: css`
+    xs: css`
         ${TextStyleVariants.smallestException}
       `,
-      md: css`
+    md: css`
         ${TextStyleVariants.paragraph1}
       `,
-    })}
+  })}
     &:hover,
         &:focus {
       font-weight: 500;
