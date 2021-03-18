@@ -28,8 +28,8 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0"
   },
-  "husky":{
-    "hooks":{
+  "husky": {
+    "hooks": {
       "pre-push": "npm run lint"
     }
   },
