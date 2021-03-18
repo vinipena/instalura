@@ -32,3 +32,10 @@ yarn-error.log*
 
 # vercel
 .vercel
+node_modules/.package-lock.json
+node_modules/@eslint/eslintrc/CHANGELOG.md
+node_modules/@eslint/eslintrc/package.json
+node_modules/@eslint/eslintrc/README.md
+node_modules/@eslint/eslintrc/conf/environments.js
+node_modules/@eslint/eslintrc/lib/index.js
+node_modules/@eslint/eslintrc/lib/shared/deprecation-warnings.js
