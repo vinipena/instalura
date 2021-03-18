@@ -39,3 +39,5 @@ node_modules/@eslint/eslintrc/README.md
 node_modules/@eslint/eslintrc/conf/environments.js
 node_modules/@eslint/eslintrc/lib/index.js
 node_modules/@eslint/eslintrc/lib/shared/deprecation-warnings.js
+node_modules/.package-lock.json
+node_modules/.bin/husky
