@@ -71,7 +71,7 @@ export default function Button({ href, children, ...props }) {
   );
 }
 
-Button.defaultProps ={
+Button.defaultProps = {
   href: undefined,
 };
 Button.propTypes = {
