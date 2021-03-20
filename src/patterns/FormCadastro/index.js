@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable linebreak-style */
 import React from 'react';
-import { Button } from '../../components/commons/Button';
+import Button from '../../components/commons/Button';
 import TextField from '../../components/forms/TextField';
 import { Box } from '../../components/layout/Box';
 import { Grid } from '../../components/layout/Grid';
