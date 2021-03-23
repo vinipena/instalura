@@ -1,7 +1,6 @@
-/* eslint-disable linebreak-style */
 import React from 'react';
-import styled, { createGlobalStyle, css } from 'styled-components';
 import PropTypes from 'prop-types';
+import styled, { createGlobalStyle, css } from 'styled-components';
 import { motion } from 'framer-motion';
 
 const ModalWrapper = styled.div`
@@ -9,31 +8,34 @@ const ModalWrapper = styled.div`
   flex-direction: column;
   align-items: stretch;
   background: rgba(0,0,0,0.1);
-  position:fixed;
-  top:0;
-  left:0;
+  position: fixed;
+  top: 0;
+  left: 0;
   right: 0;
   bottom: 0;
   margin: auto;
   overflow: scroll;
- ${({ isOpen }) => {
+  transition: .3s;
+  z-index: 100;
+
+  ${({ isOpen }) => {
     if (isOpen) {
       return css`
         opacity: 1;
-        pointer-events:all;
-     `;
+        pointer-events: all;
+      `;
     }
     return css`
-        opacity:0;
-        pointer-events: none;
+      opacity: 0;
+      pointer-events: none;
     `;
-  }
-}
+  }}
 `;
+
 const LockScroll = createGlobalStyle`
-    body{
-      overflow:hidden;
-    } 
+  body {
+    overflow: hidden;
+  }
 `;
 
 function Modal({ isOpen, onClose, children }) {
@@ -42,12 +44,14 @@ function Modal({ isOpen, onClose, children }) {
       isOpen={isOpen}
       onClick={(event) => {
         const isSafeArea = event.target.closest('[data-modal-safe-area="true"]');
+        // isOpen = false;
         if (!isSafeArea) {
           onClose();
         }
       }}
     >
       {isOpen && <LockScroll />}
+
       <motion.div
         variants={{
           open: {
@@ -58,9 +62,9 @@ function Modal({ isOpen, onClose, children }) {
           },
         }}
         animate={isOpen ? 'open' : 'closed'}
-        transition={
-           { duration: 0.5 }
-        }
+        transition={{
+          duration: 0.5,
+        }}
         style={{
           display: 'flex',
           flex: 1,
@@ -76,8 +80,8 @@ function Modal({ isOpen, onClose, children }) {
 
 Modal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired,
   children: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
 };
 
 export default Modal;

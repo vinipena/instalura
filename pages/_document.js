@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import Document from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
@@ -10,6 +9,7 @@ export default class MyDocument extends Document {
 
     try {
       ctx.renderPage = () => originalRenderPage({
+        // eslint-disable-next-line react/jsx-props-no-spreading
         enhanceApp: (App) => (props) => sheet.collectStyles(<App {...props} />),
       });
 
