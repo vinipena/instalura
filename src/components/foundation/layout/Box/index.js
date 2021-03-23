@@ -1,7 +1,5 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
-import { propToStyle } from '../../../theme/utils/propToStyle';
+import { propToStyle } from '../../../../theme/utils/propToStyle';
 
 export const Box = styled.div`
   ${propToStyle('flex')}
@@ -10,11 +8,13 @@ export const Box = styled.div`
   ${propToStyle('justifyContent')}
   ${propToStyle('flexWrap')}
   ${propToStyle('backgroundColor')}
-  background-image: ${({ theme }) => theme.imageBubbles};
+  ${propToStyle('backgroundImage')}
   ${propToStyle('backgroundRepeat')}
   ${propToStyle('backgroundPosition')}
+
   ${propToStyle('boxShadow')}
   ${propToStyle('padding')}
+
   ${propToStyle('width')}
   ${propToStyle('listStyle')}
   ${propToStyle('margin')}

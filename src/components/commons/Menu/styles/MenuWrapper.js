@@ -1,8 +1,6 @@
-/* eslint-disable import/prefer-default-export */
 import styled, { css } from 'styled-components';
-
 import { breakpointsMedia } from '../../../../theme/utils/breakpointsMedia';
-import { TextStyleVariants } from '../../../foundation/Text';
+import { TextStyleVariantsMap } from '../../../foundation/Text';
 
 export const MenuWrapper = styled.nav`
   font-family: 'Rubik', sans-serif;
@@ -24,7 +22,7 @@ export const MenuWrapper = styled.nav`
       max-width: 768px;
     `,
     lg: css`
-      max-width: 1160px;
+      max-width: 1160px; 
     `,
     xl: css`
       max-width: 1222px;
@@ -38,8 +36,12 @@ MenuWrapper.LeftSide = styled.div`
   order: 1;
   ${breakpointsMedia({
     md: css`
-      width: 131px;
-      height: 32px;
+        width: 131px;
+        height: 32px;
+      `,
+  })}
+  ${breakpointsMedia({
+    md: css`
       order: initial;
       padding-right: 16px;
     `,
@@ -47,7 +49,7 @@ MenuWrapper.LeftSide = styled.div`
 `;
 
 MenuWrapper.CentralSide = styled.div`
-  padding: 12px;
+  padding: 0;
   margin: 0;
   order: 3;
   width: 100%;
@@ -56,8 +58,10 @@ MenuWrapper.CentralSide = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-top: 17px;
-  border-top: 1px solid #88989e;
-  border-bottom: 1px solid #88989e;
+  border-top: 1px solid #88989E;
+  border-bottom: 1px solid #88989E;
+  padding: 12px;
+  
   ${breakpointsMedia({
     md: css`
       max-width: 332px;
@@ -69,25 +73,26 @@ MenuWrapper.CentralSide = styled.div`
       padding-top: 0;
       padding-bottom: 0;
     `,
-  })};
+  })}
   a {
     text-align: center;
     display: block;
     text-decoration: none;
-    color: ${({ theme }) => theme.colors.tertiary.light.color};
+    color: #88989E;
     transition: 200ms ease-in-out;
     ${breakpointsMedia({
     xs: css`
-        ${TextStyleVariants.smallestException}
-      `,
+        ${TextStyleVariantsMap.smallestException}
+    `,
     md: css`
-        ${TextStyleVariants.paragraph1}
-      `,
+      ${TextStyleVariantsMap.paragraph1}
+    `,
   })}
     &:hover,
-        &:focus {
+    &:focus {
       font-weight: 500;
-      color: ${({ theme }) => theme.colors.tertiary.main.color};
+      color: #070C0E;
+      
     }
   }
 `;

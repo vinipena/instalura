@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { MenuWrapper } from './styles/MenuWrapper';
 import { Logo } from '../../../theme/Logo';
-import Button from '../Button';
-import { Text } from '../../foundation/Text';
+import Text from '../../foundation/Text';
+import { Button } from '../Button';
+import { MenuWrapper } from './styles/MenuWrapper';
 
 const links = [
   {
@@ -11,7 +11,7 @@ const links = [
     url: '/',
   },
   {
-    texto: 'Perguntas Frequentes',
+    texto: 'Perguntas frequentes',
     url: '/faq',
   },
   {
@@ -29,6 +29,11 @@ export default function Menu({ onCadastrarClick }) {
       <MenuWrapper.CentralSide>
         {links.map((link) => (
           <li key={link.url}>
+            {/* <NextLink href={link.url}>
+              <a>
+                {link.texto}
+              </a>
+            </NextLink> */}
             <Text variant="smallestException" tag="a" href={link.url}>
               {link.texto}
             </Text>
@@ -39,10 +44,7 @@ export default function Menu({ onCadastrarClick }) {
         <Button ghost variant="secondary.main" href="/app/login">
           Entrar
         </Button>
-        <Button
-          variant="primary.main"
-          onClick={onCadastrarClick}
-        >
+        <Button variant="primary.main" onClick={onCadastrarClick}>
           Cadastrar
         </Button>
       </MenuWrapper.RightSide>

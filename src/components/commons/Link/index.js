@@ -6,18 +6,17 @@ import styled from 'styled-components';
 import get from 'lodash/get';
 
 const StyledLink = styled.a`
-    color: inherit;
-    ${({ theme, color }) => (color
-    ? `color:${get(theme, `color.${color}.color`)}`
-    : 'color:inherit')};
-    text-decoration:none;
-    opacity:1;
-    transition: opacity ${({ theme }) => theme.trasition};
-    &hover,
-    &focus{
-        opacity: .5;
-    }
-
+  color: inherit;
+  ${({ theme, color }) => (color
+    ? `color: ${get(theme, `colors.${color}.color`)}`
+    : 'color: inherit;')};
+  text-decoration: none;
+  opacity: 1;
+  transition: opacity ${({ theme }) => theme.transition};
+  &:hover,
+  &:focus {
+    opacity: .5;
+  }
 `;
 
 export default function Link({ href, children, ...props }) {

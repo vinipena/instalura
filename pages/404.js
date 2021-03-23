@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function PageSobre() {
+export default function Page404() {
   return (
     <div>
-      Página Sobre
+      Página 404
     </div>
   );
 }
