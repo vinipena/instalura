@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@crello/react-lottie": "^0.0.11",
-    "framer-motion": "^3.9.1",
+    "framer-motion": "^4.1.0",
     "lodash": "^4.17.20",
     "lottie": "^0.0.1",
     "next": "latest",
