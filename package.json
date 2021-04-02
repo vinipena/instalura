@@ -6,10 +6,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint --ignore-path .gitignore .",
-    "commit": "cz"
+    "commit": "cz",
+    "test:integration:open": "cypress open"
   },
   "dependencies": {
     "@crello/react-lottie": "^0.0.11",
+    "cypress": "^6.8.0",
+    "eslint-plugin-cypress": "^2.11.2",
     "framer-motion": "^3.9.1",
     "lodash": "^4.17.20",
     "lottie": "^0.0.1",
