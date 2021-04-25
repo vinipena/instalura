@@ -11,7 +11,6 @@ export function propToStyle(propName) {
       };
     }
 
- 
     if (typeof propValue === 'object') {
       const breakpoints = {};
 
