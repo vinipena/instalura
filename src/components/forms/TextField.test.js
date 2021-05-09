@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '../../infra/test/testUtilsgit ';
+import { render, screen } from '../../infra/test/testUtils';
 import TextField from './TextField';
 
 describe('<TextField />', () => {
