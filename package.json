@@ -28,7 +28,8 @@
     "react-dom": "^16.8.0",
     "react-is": "^16.8.0",
     "styled-components": "^5.0.0",
-    "styled-normalize": "^8.0.7"
+    "styled-normalize": "^8.0.7",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
@@ -53,7 +54,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run lint",
+      "pre-push": "yarn lint",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
