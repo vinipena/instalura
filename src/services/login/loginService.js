@@ -1,4 +1,4 @@
-import { destroyCookie, setCookie } from 'nookies';
+import { setCookie, destroyCookie } from 'nookies';
 import { isStagingEnv } from '../../infra/env/isStagingEnv';
 
 async function HttpClient(url, { headers, body, ...options }) {
@@ -14,19 +14,24 @@ async function HttpClient(url, { headers, body, ...options }) {
       if (respostaDoServer.ok) {
         return respostaDoServer.json();
       }
+
       throw new Error('Falha em pegar os dados do servidor :(');
     });
 }
 
 const BASE_URL = isStagingEnv
-// BackEnd de DEV
-  ? 'https://instalura-api.vercel.app'
-// BackEnd de Prod
-  : 'https://instalura-api.vercel.app';
+  // Back End de DEV
+  ? 'https://instalura-api-git-master.omariosouto.vercel.app'
+  // Back End de PROD
+  : 'https://instalura-api.omariosouto.vercel.app';
 
 export const loginService = {
-  async login({ username, password }) {
-    return HttpClient(`${BASE_URL}/api/login`, {
+  async login(
+    { username, password },
+    setCookieModule = setCookie,
+    HttpClientModule = HttpClient,
+  ) {
+    return HttpClientModule(`${BASE_URL}/api/login`, {
       method: 'POST',
       body: {
         username, // 'omariosouto'
@@ -34,21 +39,23 @@ export const loginService = {
       },
     })
       .then((respostaConvertida) => {
-        // Salvar o Token
-        // Escrever os testes
-        // console.log(respostaConvertida);
         const { token } = respostaConvertida.data;
+        const hasToken = token;
+        if (!hasToken) {
+          throw new Error('Failed to login');
+        }
         const DAY_IN_SECONDS = 86400;
-
-        setCookie(null, 'APP_TOKEN', token, {
+        // Salvar o Token
+        setCookieModule(null, 'APP_TOKEN', token, {
           path: '/',
           maxAge: DAY_IN_SECONDS * 7,
         });
-
-        return respostaConvertida;
+        return {
+          token,
+        };
       });
   },
-  logout() {
-    destroyCookie('APP_TOKEN');
+  async logout(destroyCookieModule = destroyCookie) {
+    destroyCookieModule(null, 'APP_TOKEN');
   },
 };
