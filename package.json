@@ -32,7 +32,7 @@
     "react-dom": "^16.8.0",
     "react-is": "^16.8.0",
     "regenerator-runtime": "^0.13.7",
-    "start-server-and-test": "^1.12.5",
+    "start-server-and-test": "^1.15.3",
     "styled-components": "^5.0.0",
     "styled-normalize": "^8.0.7",
     "yup": "^0.32.9"
